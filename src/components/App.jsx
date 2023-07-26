@@ -6,6 +6,7 @@ import FilterContacts from './FilterContacts/FilterContacts';
 import ContactList from './ContactList/ContactList';
 // import { setFilter } from '../redux/filterSlice';
 import styled from './App.module.css';
+import { fetchContacts } from 'redux/fetchContacts';
 
 const App = () => {
   const [contacts, setContacts] = useState([]);
@@ -19,17 +20,17 @@ const App = () => {
   //   localStorage.setItem('contacts', JSON.stringify(contacts));
   // }, [contacts]);
 
-  const fetchContacts = async () => {
-    try {
-      const response = await axios.get(
-        'https://64bee4335ee688b6250d0873.mockapi.io/contacts/contacts'
-      );
-      const contactsData = response.data;
-      setContacts(contactsData);
-    } catch (error) {
-      console.error('Error fetching contacts:', error);
-    }
-  };
+  // const fetchContacts = async () => {
+  //   try {
+  //     const response = await axios.get(
+  //       'https://64bee4335ee688b6250d0873.mockapi.io/contacts/contacts'
+  //     );
+  //     const contactsData = response.data;
+  //     setContacts(contactsData);
+  //   } catch (error) {
+  //     console.error('Error fetching contacts:', error);
+  //   }
+  // };
 
   const handleDeleteContact = async id => {
     try {
